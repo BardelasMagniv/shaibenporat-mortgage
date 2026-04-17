@@ -235,9 +235,7 @@
           <h2>יצירת קשר</h2>
           <p class="contact-intro">ניתן להשאיר פרטים ואחזור בהקדם. שיחת הייעוץ הראשונית ללא עלות וללא התחייבות.</p>
 
-          <form id="contact-form" class="form" name="contact" method="POST" action="/" data-netlify="true" netlify-honeypot="bot-field" novalidate>
-            <input type="hidden" name="form-name" value="contact" />
-            <p class="hidden" style="display:none"><label>Don't fill this out: <input name="bot-field" /></label></p>
+          <form id="contact-form" class="form" name="contact" method="POST" netlify novalidate>
             <div class="field">
               <label for="name">שם מלא <span class="req">*</span></label>
               <input id="name" name="name" type="text" required autocomplete="name" />

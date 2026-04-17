@@ -83,8 +83,7 @@
       `שלום שי,\n` +
       `שמי ${name}.\n` +
       `טלפון: ${phone}\n` +
-      (msg ? `הודעה: ${msg}\n` : '') +
-      `\nנשלח מהאתר.`
+      (msg ? `הודעה: ${msg}\n` : '')
     );
   }
 
@@ -94,36 +93,12 @@
   }
 
   form.addEventListener('submit', (e) => {
-    e.preventDefault();
     if (!validateAll()) {
+      e.preventDefault();
       statusEl.textContent = 'יש למלא את השדות המסומנים.';
       return;
     }
-    statusEl.textContent = 'שולח...';
-    const body = new URLSearchParams({
-      'form-name': 'contact',
-      name: fields.name.value.trim(),
-      phone: fields.phone.value.trim(),
-      message: fields.message.value.trim(),
-    }).toString();
-    fetch(form.action || location.pathname, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: body,
-    })
-      .then((res) => {
-        if (res.ok) {
-          statusEl.textContent = 'הפנייה נשלחה בהצלחה. אחזור אליך בהקדם.';
-          form.reset();
-        } else {
-          console.error('Netlify form error:', res.status, res.statusText);
-          statusEl.textContent = 'אירעה שגיאה, ניתן לנסות שוב או ליצור קשר בטלפון.';
-        }
-      })
-      .catch((err) => {
-        console.error('Netlify form fetch error:', err);
-        statusEl.textContent = 'אירעה שגיאה, ניתן לנסות שוב או ליצור קשר בטלפון.';
-      });
+    // Let Netlify handle the native POST submission
   });
 
   const waBtn = document.getElementById('send-whatsapp');
