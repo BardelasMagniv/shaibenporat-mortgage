@@ -99,22 +99,29 @@
       statusEl.textContent = 'יש למלא את השדות המסומנים.';
       return;
     }
-    const formData = new FormData(form);
     statusEl.textContent = 'שולח...';
-    fetch('/', {
+    const body = new URLSearchParams({
+      'form-name': 'contact',
+      name: fields.name.value.trim(),
+      phone: fields.phone.value.trim(),
+      message: fields.message.value.trim(),
+    }).toString();
+    fetch(form.action || location.pathname, {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: new URLSearchParams(formData).toString(),
+      body: body,
     })
       .then((res) => {
         if (res.ok) {
           statusEl.textContent = 'הפנייה נשלחה בהצלחה. אחזור אליך בהקדם.';
           form.reset();
         } else {
+          console.error('Netlify form error:', res.status, res.statusText);
           statusEl.textContent = 'אירעה שגיאה, ניתן לנסות שוב או ליצור קשר בטלפון.';
         }
       })
-      .catch(() => {
+      .catch((err) => {
+        console.error('Netlify form fetch error:', err);
         statusEl.textContent = 'אירעה שגיאה, ניתן לנסות שוב או ליצור קשר בטלפון.';
       });
   });
