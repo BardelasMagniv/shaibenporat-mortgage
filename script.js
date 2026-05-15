@@ -141,4 +141,44 @@
       }
     });
   }
+
+  // ===== BLD Banner =====
+  const bldBanner = document.getElementById('bld-banner');
+  const bldBannerClose = document.getElementById('bld-banner-close');
+  if (bldBanner && bldBannerClose) {
+    bldBannerClose.addEventListener('click', () => {
+      bldBanner.classList.add('hidden');
+      sessionStorage.setItem('bld-banner-closed', '1');
+    });
+    if (sessionStorage.getItem('bld-banner-closed')) {
+      bldBanner.classList.add('hidden');
+    }
+  }
+
+  // ===== BLD Popup =====
+  const bldPopup = document.getElementById('bld-popup');
+  const bldPopupClose = document.getElementById('bld-popup-close');
+  if (bldPopup && bldPopupClose) {
+    function openPopup() {
+      bldPopup.hidden = false;
+      document.body.style.overflow = 'hidden';
+      bldPopupClose.focus();
+    }
+    function closePopup() {
+      bldPopup.hidden = true;
+      document.body.style.overflow = '';
+      sessionStorage.setItem('bld-popup-seen', '1');
+    }
+    // Show after 4 seconds, once per session
+    if (!sessionStorage.getItem('bld-popup-seen')) {
+      setTimeout(openPopup, 4000);
+    }
+    bldPopupClose.addEventListener('click', closePopup);
+    bldPopup.addEventListener('click', (e) => {
+      if (e.target === bldPopup) closePopup();
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && !bldPopup.hidden) closePopup();
+    });
+  }
 })();

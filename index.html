@@ -49,6 +49,21 @@
 
   <a href="#main" class="skip-link">דלג לתוכן הראשי</a>
 
+  <!-- BLD Promo Banner -->
+  <div id="bld-banner" class="bld-banner" role="banner">
+    <div class="bld-banner-inner">
+      <img src="images/bld logo.svg" alt="BLD" class="bld-banner-logo" />
+      <div class="bld-banner-sep" aria-hidden="true"></div>
+      <span class="bld-banner-text">
+        <strong>רוכשי דירות BLD</strong> — פגישת ייעוץ ראשונית חינם + <strong>20% הנחה</strong>
+      </span>
+      <a href="#bld-offer" class="bld-banner-btn">למימוש ההטבה</a>
+    </div>
+    <button class="bld-banner-close" id="bld-banner-close" aria-label="סגור באנר">
+      <svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="2" y1="2" x2="14" y2="14"/><line x1="14" y1="2" x2="2" y2="14"/></svg>
+    </button>
+  </div>
+
   <!-- Top bar -->
   <header class="topbar">
     <div class="container topbar-inner">
@@ -91,7 +106,7 @@
           </p>
 
           <div class="mt-8 flex flex-wrap gap-3">
-            <a href="https://wa.me/972508624070?text=%D7%94%D7%99%D7%99%20%D7%A9%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A9%D7%9E%D7%95%D7%A2%20%D7%A2%D7%9C%20%D7%99%D7%99%D7%A2%D7%95%D7%A5%20%D7%9E%D7%A9%D7%9B%D7%A0%D7%AA%D7%90" class="btn-primary" target="_blank" rel="noopener">
+            <a href="https://wa.me/972508624070?text=%D7%94%D7%99%D7%99%20%D7%A9%D7%99%2C%20%D7%90%D7%9E%D7%A8%D7%AA%D7%99%20%D7%9C%D7%A9%D7%9E%D7%95%D7%A2%20%D7%A2%D7%9C%20%D7%99%D7%99%D7%A2%D7%95%D7%A5%20%D7%9E%D7%A9%D7%9B%D7%A0%D7%AA%D7%90" class="btn-primary" target="_blank" rel="noopener">
               <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M20.52 3.48A11.86 11.86 0 0 0 12.02 0C5.43 0 .07 5.36.07 11.94c0 2.1.55 4.15 1.6 5.96L0 24l6.27-1.64a11.9 11.9 0 0 0 5.74 1.46h.01c6.58 0 11.94-5.36 11.94-11.94 0-3.19-1.24-6.19-3.44-8.4zM12.02 21.8h-.01a9.87 9.87 0 0 1-5.03-1.38l-.36-.21-3.72.97 1-3.63-.24-.37a9.87 9.87 0 0 1-1.52-5.24c0-5.46 4.45-9.91 9.91-9.91 2.65 0 5.14 1.03 7.01 2.9a9.85 9.85 0 0 1 2.9 7.01c0 5.46-4.45 9.9-9.94 9.9z"/></svg>
               שלח הודעה בוואטסאפ
             </a>
@@ -101,9 +116,13 @@
             </a>
           </div>
 
+          <!-- Hero badge: split into two lines -->
           <div class="mt-8 flex items-center gap-3 text-sm text-muted">
             <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2l3 6.5 7 .9-5 4.9 1.2 7-6.2-3.3-6.2 3.3L7 14.3 2 9.4l7-.9z"/></svg>
-            <span>חבר לשכת שמאי המקרקעין בישראל · חלק מרשת Muhni</span>
+            <span>
+              חבר לשכת שמאי המקרקעין בישראל<br />
+              חלק מרשת Muhni
+            </span>
           </div>
         </div>
 
@@ -134,6 +153,55 @@
 
     <hr class="divider" />
 
+    <!-- Story / Personal Letter -->
+    <section id="story" class="sect">
+      <div class="container">
+        <div class="story-card reveal">
+          <div class="story-quote-mark" aria-hidden="true">"</div>
+          <div class="story-body">
+            <p class="story-lead">
+              כאשר מגיעים לנהר המשכנתאות הגועש עם חלום גדול ותיק ובו כל החסכונות שלכם, מגיע הרגע בו צריך לבחור —
+              האם אני חוצה את הנהר עם גשר עץ, או עם גשר יצוק בטון ורשת בטחון מתחתיו?
+            </p>
+
+            <p>
+              נעים מאוד, אני שי — הבעלים של משרד Muhni Optimal, המהווה חלק מהרשת הגדולה והמקצועית ביותר בארץ בתחום ייעוץ המשכנתאות — <strong>רשת Muhni</strong>.
+              אני שמאי מקרקעין ותיק עם ניסיון עצום וקשרים רבים בעולם הנדל״ן.
+            </p>
+
+            <p>
+              על מנת שאהיה עבורכם גשר יצוק בטון עם רשת בטחון, אני מביא אל המשרד את כל היכולת המקצועית רבת השנים שלי —
+              ובשילוב עם העוצמה של הרשת בבנקים והסטנדרטים המקצועיים המוקפדים, יש לכם את הביטחון שנצליח לקדם את המשכנתא הנכונה והטובה ביותר עבורכם בהצלחה מלאה.
+            </p>
+
+            <div class="story-goals">
+              <p class="story-goals-title">אז מה המטרה שלנו?</p>
+              <ul>
+                <li>להגשים לכם את החלומות.</li>
+                <li>להביא את משפחתכם לחיי רווחה.</li>
+              </ul>
+            </div>
+
+            <div class="story-goals">
+              <p class="story-goals-title">איך אנחנו עושים את זה?</p>
+              <ul>
+                <li>מקשיבים לכם ולצרכים שלכם.</li>
+                <li>פועלים במקצועיות ומביאים לידי ביטוי את כל עוצמת הרשת ויכולותיה — והכל תוך שירות אישי עם יועץ אישי.</li>
+                <li>כל תיק עובר 3 זוגות עיניים מקצועיות על מנת להביא את הפתרון המושלם עבורכם.</li>
+              </ul>
+            </div>
+
+            <p class="story-closing">
+              לחיי רווחה וביטחון כלכלי —<br />
+              <a href="#contact" class="story-cta-link">השאירו פרטים ונחזור אליכם ↓</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <hr class="divider" />
+
     <!-- Services -->
     <section id="services" class="sect">
       <div class="container">
@@ -145,7 +213,7 @@
           </div>
           <div class="service-row reveal">
             <h3>שמאות מקרקעין</h3>
-            <p>הערכות שווי מקצועיות ומדויקות, מבוססות על ניסיון של למעלה מעשור וקשרים רחבים בשוק הנדל״ן הישראלי.</p>
+            <p>הערכות שווי מקצועיות ומדויקות, מבוססות על ניסיון של 18 שנה וקשרים רחבים בשוק הנדל״ן הישראלי.</p>
           </div>
           <div class="service-row reveal">
             <h3>תכנון פיננסי</h3>
@@ -208,6 +276,8 @@
           <li>תואר ראשון בכלכלה ומנהל עסקים</li>
           <li>תעודת שמאי מקרקעין (2012)</li>
           <li>תעודת הנדסאי בניין (2021)</li>
+          <li>הכשרת ייעוץ משכנתאות — Muhni</li>
+          <li>הכשרת ייעוץ משכנתאות — פסגות (2019)</li>
           <li>חבר לשכת שמאי המקרקעין בישראל</li>
         </ul>
       </div>
@@ -223,6 +293,58 @@
           במשרדנו ישנם 5 יועצים מנוסים ומקצועיים. כל לקוח מקבל ליווי אישי
           צמוד, תוך שיתוף פעולה פנימי שמבטיח בקרה מרובדת וגישה לידע מצטבר רחב.
         </p>
+      </div>
+    </section>
+
+    <hr class="divider" />
+
+    <!-- BLD Special Offer -->
+    <section id="bld-offer" class="sect">
+      <div class="container">
+        <div class="bld-offer-card reveal">
+          <!-- Top badge -->
+          <div class="bld-badge">מבצע מיוחד לרוכשי דירות</div>
+
+          <!-- Logos row -->
+          <div class="bld-logos">
+            <img src="images/bld logo.svg" alt="BLD" class="bld-logo" />
+            <div class="bld-logos-x" aria-hidden="true">×</div>
+            <img src="images/mashk logo.png" alt="Muhni Optimal" class="bld-muhni-logo" />
+          </div>
+
+          <!-- Headline -->
+          <h2 class="bld-headline">
+            רכשתם דירה חדשה מ-BLD?<br />
+            <span>מגיע לכם יותר.</span>
+          </h2>
+
+          <!-- Perks -->
+          <div class="bld-perks">
+            <div class="bld-perk">
+              <div class="bld-perk-icon" aria-hidden="true">🎁</div>
+              <div>
+                <strong>פגישת ייעוץ ראשונית בחינם</strong>
+                <p>נשב יחד, נבין את הצרכים שלכם ונמפה את האפשרויות — ללא עלות וללא התחייבות.</p>
+              </div>
+            </div>
+            <div class="bld-perk">
+              <div class="bld-perk-icon" aria-hidden="true">💰</div>
+              <div>
+                <strong>20% הנחה על שירותי הייעוץ</strong>
+                <p>הטבה בלעדית לרוכשי דירות חדשות מ-BLD — חיסכון אמיתי על הדרך לדירה.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- CTA -->
+          <div class="bld-cta">
+            <a href="https://wa.me/972508624070?text=%D7%94%D7%99%D7%99%20%D7%A9%D7%99%2C%20%D7%A8%D7%9B%D7%A9%D7%AA%D7%99%20%D7%93%D7%99%D7%A8%D7%94%20%D7%9E-BLD%20%D7%95%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A9%D7%9E%D7%95%D7%A2%20%D7%A2%D7%9C%20%D7%94%D7%9E%D7%91%D7%A2" class="btn-primary bld-cta-btn" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M20.52 3.48A11.86 11.86 0 0 0 12.02 0C5.43 0 .07 5.36.07 11.94c0 2.1.55 4.15 1.6 5.96L0 24l6.27-1.64a11.9 11.9 0 0 0 5.74 1.46h.01c6.58 0 11.94-5.36 11.94-11.94 0-3.19-1.24-6.19-3.44-8.4zM12.02 21.8h-.01a9.87 9.87 0 0 1-5.03-1.38l-.36-.21-3.72.97 1-3.63-.24-.37a9.87 9.87 0 0 1-1.52-5.24c0-5.46 4.45-9.91 9.91-9.91 2.65 0 5.14 1.03 7.01 2.9a9.85 9.85 0 0 1 2.9 7.01c0 5.46-4.45 9.9-9.94 9.9z"/></svg>
+              מימשו את ההטבה עכשיו
+            </a>
+            <p class="bld-fine">ההטבה בתוקף לרוכשי דירות חדשות מ-BLD בלבד · בכפוף לאימות הרכישה</p>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -316,6 +438,55 @@
     <button data-a11y="contrast">ניגודיות גבוהה</button>
     <button data-a11y="links">הדגשת קישורים</button>
     <button data-a11y="reset">איפוס</button>
+  </div>
+
+  <!-- BLD Popup -->
+  <div id="bld-popup" class="bld-popup-overlay" role="dialog" aria-modal="true" aria-label="מבצע מיוחד לרוכשי BLD" hidden>
+    <div class="bld-popup">
+      <button class="bld-popup-close" id="bld-popup-close" aria-label="סגור">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="2" y1="2" x2="14" y2="14"/><line x1="14" y1="2" x2="2" y2="14"/></svg>
+      </button>
+
+      <!-- Exclusive ribbon -->
+      <div class="bld-popup-ribbon">EXCLUSIVE</div>
+
+      <!-- Logos -->
+      <div class="bld-popup-logos">
+        <img src="images/bld logo.svg" alt="BLD" class="bld-popup-logo-bld" />
+        <span class="bld-popup-logos-x" aria-hidden="true">×</span>
+        <img src="images/mashk logo.png" alt="Muhni Optimal" class="bld-popup-logo-muhni" />
+      </div>
+
+      <p class="bld-popup-eyebrow">שיתוף פעולה בלעדי</p>
+      <h2 class="bld-popup-title">
+        רכשתם דירה<br />חדשה מ-BLD?
+      </h2>
+      <p class="bld-popup-sub">מגיעה לכם חבילת הטבות ייחודית:</p>
+
+      <div class="bld-popup-perks">
+        <div class="bld-popup-perk">
+          <span class="bld-popup-perk-num">01</span>
+          <div>
+            <strong>פגישת ייעוץ ראשונית בחינם</strong>
+            <p>ללא עלות, ללא התחייבות</p>
+          </div>
+        </div>
+        <div class="bld-popup-perk">
+          <span class="bld-popup-perk-num">02</span>
+          <div>
+            <strong>20% הנחה על שירותי הייעוץ</strong>
+            <p>הטבה בלעדית לרוכשי BLD</p>
+          </div>
+        </div>
+      </div>
+
+      <a href="https://wa.me/972508624070?text=%D7%94%D7%99%D7%99%20%D7%A9%D7%99%2C%20%D7%A8%D7%9B%D7%A9%D7%AA%D7%99%20%D7%93%D7%99%D7%A8%D7%94%20%D7%9E-BLD%20%D7%95%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A9%D7%9E%D7%95%D7%A2%20%D7%A2%D7%9C%20%D7%94%D7%9E%D7%91%D7%A2"
+         class="bld-popup-cta" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" width="19" height="19" fill="currentColor" aria-hidden="true"><path d="M20.52 3.48A11.86 11.86 0 0 0 12.02 0C5.43 0 .07 5.36.07 11.94c0 2.1.55 4.15 1.6 5.96L0 24l6.27-1.64a11.9 11.9 0 0 0 5.74 1.46h.01c6.58 0 11.94-5.36 11.94-11.94 0-3.19-1.24-6.19-3.44-8.4zM12.02 21.8h-.01a9.87 9.87 0 0 1-5.03-1.38l-.36-.21-3.72.97 1-3.63-.24-.37a9.87 9.87 0 0 1-1.52-5.24c0-5.46 4.45-9.91 9.91-9.91 2.65 0 5.14 1.03 7.01 2.9a9.85 9.85 0 0 1 2.9 7.01c0 5.46-4.45 9.9-9.94 9.9z"/></svg>
+        מימשו את ההטבה עכשיו
+      </a>
+      <p class="bld-popup-fine">בכפוף לאימות רכישת דירה מ-BLD</p>
+    </div>
   </div>
 
   <script src="script.js" defer></script>

@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 368 185">
+  <!-- b: stem + ring bowl (evenodd creates transparent hole) -->
+  <rect x="15" y="10" width="40" height="160" rx="20" fill="#111"/>
+  <path fill-rule="evenodd" fill="#111" d="
+    M 30,113 A 57,57 0 1,0 144,113 A 57,57 0 1,0 30,113 Z
+    M 59,113 A 28,28 0 1,0 115,113 A 28,28 0 1,0 59,113 Z
+  "/>
+
+  <!-- l: simple stem -->
+  <rect x="164" y="10" width="40" height="160" rx="20" fill="#111"/>
+
+  <!-- d: ring bowl + stem (mirror of b) -->
+  <path fill-rule="evenodd" fill="#111" d="
+    M 224,113 A 57,57 0 1,0 338,113 A 57,57 0 1,0 224,113 Z
+    M 253,113 A 28,28 0 1,0 309,113 A 28,28 0 1,0 253,113 Z
+  "/>
+  <rect x="313" y="10" width="40" height="160" rx="20" fill="#111"/>
+</svg>
