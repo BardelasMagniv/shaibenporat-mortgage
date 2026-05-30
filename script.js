@@ -5,6 +5,31 @@
   const yearEl = document.getElementById('year');
   if (yearEl) yearEl.textContent = new Date().getFullYear();
 
+  // If the URL contains #1, disable all BLD offers on the page.
+  const disableBldForHash = (() => {
+    const h = location.hash || '';
+    // match exactly '#1' or anything that starts with '#1' (e.g. '#1?x' or '#1/..')
+    return h === '#1' || h.indexOf('#1') === 0;
+  })();
+
+  if (disableBldForHash) {
+    // hide main BLD sections by id
+    ['bld-banner', 'bld-popup', 'bld-offer'].forEach((id) => {
+      const el = document.getElementById(id);
+      if (el) {
+        el.hidden = true;
+        el.style.display = 'none';
+      }
+    });
+    // hide any element with class name containing 'bld-' to be safe
+    document.querySelectorAll('[class*="bld-"]').forEach((el) => {
+      el.hidden = true;
+      el.style.display = 'none';
+    });
+    // expose flag so later logic can skip initialization
+    window.__disableBLD = true;
+  }
+
   // ===== Reveal on scroll =====
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const revealEls = document.querySelectorAll('.reveal');
@@ -145,40 +170,44 @@
   // ===== BLD Banner =====
   const bldBanner = document.getElementById('bld-banner');
   const bldBannerClose = document.getElementById('bld-banner-close');
-  if (bldBanner && bldBannerClose) {
-    bldBannerClose.addEventListener('click', () => {
-      bldBanner.classList.add('hidden');
-      sessionStorage.setItem('bld-banner-closed', '1');
-    });
-    if (sessionStorage.getItem('bld-banner-closed')) {
-      bldBanner.classList.add('hidden');
+  if (!window.__disableBLD) {
+    if (bldBanner && bldBannerClose) {
+      bldBannerClose.addEventListener('click', () => {
+        bldBanner.classList.add('hidden');
+        sessionStorage.setItem('bld-banner-closed', '1');
+      });
+      if (sessionStorage.getItem('bld-banner-closed')) {
+        bldBanner.classList.add('hidden');
+      }
     }
   }
 
   // ===== BLD Popup =====
   const bldPopup = document.getElementById('bld-popup');
   const bldPopupClose = document.getElementById('bld-popup-close');
-  if (bldPopup && bldPopupClose) {
-    function openPopup() {
-      bldPopup.hidden = false;
-      document.body.style.overflow = 'hidden';
-      bldPopupClose.focus();
+  if (!window.__disableBLD) {
+    if (bldPopup && bldPopupClose) {
+      function openPopup() {
+        bldPopup.hidden = false;
+        document.body.style.overflow = 'hidden';
+        bldPopupClose.focus();
+      }
+      function closePopup() {
+        bldPopup.hidden = true;
+        document.body.style.overflow = '';
+        sessionStorage.setItem('bld-popup-seen', '1');
+      }
+      // Show after 4 seconds, once per session
+      if (!sessionStorage.getItem('bld-popup-seen')) {
+        setTimeout(openPopup, 4000);
+      }
+      bldPopupClose.addEventListener('click', closePopup);
+      bldPopup.addEventListener('click', (e) => {
+        if (e.target === bldPopup) closePopup();
+      });
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && !bldPopup.hidden) closePopup();
+      });
     }
-    function closePopup() {
-      bldPopup.hidden = true;
-      document.body.style.overflow = '';
-      sessionStorage.setItem('bld-popup-seen', '1');
-    }
-    // Show after 4 seconds, once per session
-    if (!sessionStorage.getItem('bld-popup-seen')) {
-      setTimeout(openPopup, 4000);
-    }
-    bldPopupClose.addEventListener('click', closePopup);
-    bldPopup.addEventListener('click', (e) => {
-      if (e.target === bldPopup) closePopup();
-    });
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && !bldPopup.hidden) closePopup();
-    });
   }
 })();
